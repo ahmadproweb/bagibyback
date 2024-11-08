@@ -1,6 +1,5 @@
 const Order = require('../models/order');
 const sendEmail = require('../utils/emailService');
-const whatsapp = require('../utils/whatsappService'); 
 
 exports.createOrder = async (req, res) => {
   try {
@@ -64,7 +63,7 @@ exports.createOrder = async (req, res) => {
 
     const adminPhone = process.env.ADMIN_PHONE;
     const whatsappMessage = `New order received! Order ID: ${newOrder._id}\nCustomer: ${newOrder.customerName.first} ${newOrder.customerName.last}\nTotal: $${newOrder.total}`;
-    await whatsapp.sendMessage(adminPhone, whatsappMessage);
+    // await whatsapp.sendMessage(adminPhone, whatsappMessage);
 
     res.status(201).json({ message: 'Order completed successfully', order: newOrder });
   } catch (error) {
