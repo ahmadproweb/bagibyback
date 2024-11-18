@@ -17,10 +17,15 @@ connectDb();
 
 app.use(
   cors({
-    origin: [`${process.env.WEBSITE_URL}`, `${process.env.originAdmin}`],
+    origin: [
+      `${process.env.WEBSITE_URL}`,
+      `${process.env.originAdmin}`,
+      `${process.env.originWWW}`, // New origin added here
+    ],
     credentials: true,
   })
 );
+
 
 app.use(express.json());
 app.use(cookieParser());

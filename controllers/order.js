@@ -19,7 +19,7 @@ exports.createOrder = async (req, res) => {
     let userHTML = `
       <h1>Thank you for your order!</h1>
       <p>Order ID: ${newOrder._id}</p>
-      <p>Total: $${newOrder.total}</p>
+      <p>Total: ${newOrder.total}</p>
       <p><a href="https://wa.me/${process.env.ADMIN_PHONE}?text=Track%20order%20ID:%20${newOrder._id}">Track your order on WhatsApp</a></p>
       <h2>Your Order Items:</h2>
       <ul>
@@ -29,7 +29,7 @@ exports.createOrder = async (req, res) => {
         <li>
           <h3>${item.title} (Qty: ${item.quantity})</h3>
           <img src="${item.cartImage}" alt="${item.title}" style="width: 100px;">
-          <p>Total Price: $${item.totalPrice}</p>
+          <p>Total Price: ${item.totalPrice}</p>
         </li>
       `;
     });
@@ -44,7 +44,7 @@ exports.createOrder = async (req, res) => {
       <h1>New Order Received!</h1>
       <p>Order ID: ${newOrder._id}</p>
       <p>Customer: ${newOrder.customerName.first} ${newOrder.customerName.last}</p>
-      <p>Total: $${newOrder.total}</p>
+      <p>Total: ${newOrder.total}</p>
       <h2>Order Items:</h2>
       <ul>
     `;
@@ -53,7 +53,7 @@ exports.createOrder = async (req, res) => {
         <li>
           <h3>${item.title} (Qty: ${item.quantity})</h3>
           <img src="${item.cartImage}" alt="${item.title}" style="width: 200px;">
-          <p>Total Price: $${item.totalPrice}</p>
+          <p>Total Price: ${item.totalPrice}</p>
         </li>
       `;
     });
