@@ -51,7 +51,7 @@ exports.createProduct = async (req, res) => {
     const newProduct = new Product({
       title: req.body.title,
       homeProduct: req.body.homeProduct,
-      filterProducts: req.body.filterProducts,
+      // filterProducts: req.body.filterProducts,
       star: req.body.star,
       mainPrice: req.body.mainPrice,
       fakeSold: req.body.fakeSold,
