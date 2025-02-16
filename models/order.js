@@ -6,7 +6,6 @@ const orderSchema = new mongoose.Schema({
     last: { type: String, required: true },
   },
   contact: {
-    email: { type: String, required: true },
     phone: { type: String, required: true },
     alternativePhone: { type: String },
   },
@@ -14,7 +13,6 @@ const orderSchema = new mongoose.Schema({
     addressComplete: { type: String, required: true },
     famousPlace: { type: String},
     city: { type: String, required: true },
-    postalCode: { type: String   },
   },
   items: [{
     productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: true },
